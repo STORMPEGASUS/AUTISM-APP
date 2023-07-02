@@ -18,8 +18,9 @@ class _testScreenState extends State<testScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Autism'),
+        title: const Text('Test'),
         centerTitle: true,
+         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Center(
         child: Column(
@@ -30,13 +31,10 @@ class _testScreenState extends State<testScreen> {
               onPressed: () {
                 setState(() {
                   Navigator.pushNamed(context, '/static_Image');
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => dynamicImage(_cameras)));
+              
                 });
               },
-              child: Text(
+              child: const Text(
                 'Static Test',
               ),
             ),
@@ -49,7 +47,7 @@ class _testScreenState extends State<testScreen> {
                           builder: (context) => dynamicImage(widget._cameras)));
                 });
               },
-              child: Text(
+              child: const Text(
                 'Dynamic Test',
               ),
             ),

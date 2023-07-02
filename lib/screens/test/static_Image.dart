@@ -16,14 +16,14 @@ class _staticImageState extends State<staticImage> {
   File? _image;
   String result = 'Results will be shown here';
 
-  //TODO declare ImageLabeler
+  
   dynamic imageLabeler;
   @override
   void initState() {
-    // TODO: implement initState
+   
     super.initState();
     imagePicker = ImagePicker();
-    //TODO initialize labeler
+    
     final ImageLabelerOptions options =
         ImageLabelerOptions(confidenceThreshold: 0.5);
     imageLabeler = ImageLabeler(options: options);
@@ -34,7 +34,7 @@ class _staticImageState extends State<staticImage> {
     super.dispose();
   }
 
-  //TODO capture image using camera
+  
   _imgFromCamera() async {
     XFile? pickedFile = await imagePicker.pickImage(source: ImageSource.camera);
     _image = File(pickedFile!.path);
@@ -44,7 +44,7 @@ class _staticImageState extends State<staticImage> {
     });
   }
 
-  //TODO choose image using gallery
+  
   _imgFromGallery() async {
     XFile? pickedFile =
         await imagePicker.pickImage(source: ImageSource.gallery);
@@ -56,7 +56,7 @@ class _staticImageState extends State<staticImage> {
     }
   }
 
-  //TODO image labeling code here
+ 
   doImageLabeling() async {
     InputImage inputImage = InputImage.fromFile(_image!);
     final List<ImageLabel> labels = await imageLabeler.processImage(inputImage);
@@ -65,7 +65,7 @@ class _staticImageState extends State<staticImage> {
       final String text = label.label;
       final int index = label.index;
       final double confidence = label.confidence;
-      result += text + "   " + confidence.toStringAsFixed(2) + "\n";
+      result += "$text   ${confidence.toStringAsFixed(2)}\n";
     }
     setState(() {
       result;
@@ -103,7 +103,7 @@ class _staticImageState extends State<staticImage> {
                     Center(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Colors.transparent,
+                            backgroundColor: Colors.transparent,
                             shadowColor: Colors.transparent),
                         onPressed: _imgFromGallery,
                         onLongPress: _imgFromCamera,

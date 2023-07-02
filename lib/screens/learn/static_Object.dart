@@ -65,7 +65,7 @@ class _staticObjectState extends State<staticObject> {
     return file.path;
   }
 
-// new object detector function
+
   createObjectDetector() async {
     final modelPath = await _getModel('assets/ml/mobilenet2.tflite');
     final options = LocalObjectDetectorOptions(
@@ -163,26 +163,7 @@ class _staticObjectState extends State<staticObject> {
                               ),
                       ),
 
-                      // Container(
-                      //   margin: const EdgeInsets.only(top: 8),
-                      //   child: _image != null
-                      //       ? Image.file(
-                      //           _image!,
-                      //           width: 350,
-                      //           height: 350,
-                      //           fit: BoxFit.fill,
-                      //         )
-                      //       : Container(
-                      //           width: 350,
-                      //           height: 350,
-                      //           color: Colors.pinkAccent,
-                      //           child: const Icon(
-                      //             Icons.camera_alt,
-                      //             color: Colors.black,
-                      //             size: 100,
-                      //           ),
-                      //         ),
-                      // ),
+                    
                     ),
                   ),
                 ],

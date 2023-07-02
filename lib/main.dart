@@ -1,13 +1,9 @@
-import 'package:autism_app/screens/learn/dynamic_Object.dart';
 import 'package:autism_app/screens/learn/learn.dart';
 import 'package:autism_app/screens/learn/static_Object.dart';
 
-import 'package:autism_app/screens/test/dynamic_Image.dart';
 import 'package:autism_app/screens/test/static_Image.dart';
 import 'package:autism_app/screens/test/test.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter/cupertino.dart';
 
 import 'package:camera/camera.dart';
 
@@ -17,13 +13,12 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
   _cameras = await availableCameras();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,8 +31,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       routes: {
         staticObject.routename: (context) => staticObject(),
-        staticImage.routename: (context) => staticImage(),
-
+        staticImage.routename: (context) => const staticImage(),
       },
     );
   }
@@ -53,9 +47,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Autism'),
+        title: const Text('Simply Grow'),
         centerTitle: true,
-        
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Center(
         child: Column(
@@ -65,14 +59,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  // Navigator.pushNamed(context, '/static_object');
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => learnScreen(cameras)));
                 });
               },
-              child: Text(
+              child: const Text(
                 'Learn',
               ),
             ),
@@ -85,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           builder: (context) => testScreen(_cameras)));
                 });
               },
-              child: Text(
+              child: const Text(
                 'Test',
               ),
             ),

@@ -20,17 +20,17 @@ class _dynamicImageState extends State<dynamicImage> {
 
   String result = "results to be shown here";
 
-  //TODO declare ImageLabeler
+  
   dynamic imageLabeler;
   bool isBusy = false;
   @override
   void initState() {
     super.initState();
-    //TODO initialize labeler
+    
     final ImageLabelerOptions options =
         ImageLabelerOptions(confidenceThreshold: 0.6);
     imageLabeler = ImageLabeler(options: options);
-    //TODO initialize the controller
+   
     controller = CameraController(widget._cameras[0], ResolutionPreset.high);
     controller.initialize().then((_) {
       if (!mounted) {
@@ -63,7 +63,7 @@ class _dynamicImageState extends State<dynamicImage> {
       final String text = label.label;
       final int index = label.index;
       final double confidence = label.confidence;
-      result += text + "    " + confidence.toStringAsFixed(2) + "\n";
+      result += "$text    ${confidence.toStringAsFixed(2)}\n";
     }
     setState(() {
       result;
@@ -84,11 +84,11 @@ class _dynamicImageState extends State<dynamicImage> {
     final camera = widget._cameras[0];
     final imageRotation =
         InputImageRotationValue.fromRawValue(camera.sensorOrientation);
-    // if (imageRotation == null) return;
+   
 
     final inputImageFormat =
         InputImageFormatValue.fromRawValue(img!.format.raw);
-    // if (inputImageFormat == null) return null;
+   
 
     final planeData = img!.planes.map(
       (Plane plane) {

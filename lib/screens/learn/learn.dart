@@ -2,14 +2,10 @@ import 'package:autism_app/screens/learn/dynamic_Object.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 
-//import 'test/dynamic_Image.dart';
-
 class learnScreen extends StatefulWidget {
-   late List<CameraDescription> cameras;
+  late List<CameraDescription> cameras;
 
   learnScreen(this.cameras);
-
-  
 
   @override
   State<learnScreen> createState() => _learnScreenState();
@@ -20,8 +16,9 @@ class _learnScreenState extends State<learnScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Autism'),
+        title: const Text('Learn'),
         centerTitle: true,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: Center(
         child: Column(
@@ -32,18 +29,14 @@ class _learnScreenState extends State<learnScreen> {
               onPressed: () {
                 setState(() {
                   Navigator.pushNamed(context, '/static_object');
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => dynamicImage(_cameras)));
                 });
               },
-              child: Text(
+              child: const Text(
                 'Static Learn',
               ),
             ),
             ElevatedButton(
-              onPressed: (){
+              onPressed: () {
                 setState(() {
                   Navigator.push(
                       context,
@@ -51,7 +44,7 @@ class _learnScreenState extends State<learnScreen> {
                           builder: (context) => dynamicObject(widget.cameras)));
                 });
               },
-              child: Text(
+              child: const Text(
                 'Dynamic Learn',
               ),
             ),

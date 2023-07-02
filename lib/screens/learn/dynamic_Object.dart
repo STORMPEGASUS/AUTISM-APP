@@ -35,9 +35,9 @@ class _dynamicObjectState extends State<dynamicObject> {
     initializeCamera();
   }
 
-  //TODO code to initialize the camera feed
+  
   initializeCamera() async {
-    //TODO initialize detector
+ 
     final modelPath = await _getModel('assets/ml/mobilenet2.tflite');
     final options = LocalObjectDetectorOptions(
       modelPath: modelPath,
@@ -47,7 +47,7 @@ class _dynamicObjectState extends State<dynamicObject> {
     );
     objectDetector = ObjectDetector(options: options);
 
-    //TODO initialize controller
+
     controller = CameraController(widget.cameras[0], ResolutionPreset.high);
     await controller.initialize().then((_) {
       if (!mounted) {
@@ -60,7 +60,7 @@ class _dynamicObjectState extends State<dynamicObject> {
     });
   }
 
-  //close all resources
+
   @override
   void dispose() {
     controller?.dispose();
@@ -68,11 +68,11 @@ class _dynamicObjectState extends State<dynamicObject> {
     super.dispose();
   }
 
-  //TODO object detection on a frame
+
   dynamic _scanResults;
   CameraImage? img;
 
-  //new object model
+
   Future<String> _getModel(String assetPath) async {
     if (io.Platform.isAndroid) {
       return 'flutter_assets/$assetPath';
@@ -99,7 +99,7 @@ class _dynamicObjectState extends State<dynamicObject> {
         print('${label.text} ${label.confidence}');
       }
     }
-    // print("len= ${objects.length}");
+
     setState(() {
       _scanResults = objects;
       isBusy = false;
@@ -116,11 +116,11 @@ class _dynamicObjectState extends State<dynamicObject> {
     final camera = widget.cameras[0];
     final imageRotation =
         InputImageRotationValue.fromRawValue(camera.sensorOrientation);
-    // if (imageRotation == null) return;
+   
 
     final inputImageFormat =
         InputImageFormatValue.fromRawValue(img!.format.raw);
-    // if (inputImageFormat == null) return null;
+    
 
     final planeData = img!.planes.map(
       (Plane plane) {
@@ -145,7 +145,7 @@ class _dynamicObjectState extends State<dynamicObject> {
     return inputImage;
   }
 
-  //Show rectangles around detected objects
+
   Widget buildResult() {
     if (_scanResults == null ||
         controller == null ||
