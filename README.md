@@ -1,6 +1,6 @@
 # autism_app
 
-A new Flutter project.
+Introducing Autism, an app designed to help individuals with autism learn and grow. With a user-friendly interface, it offers two buttons on the home screen: "Train" and "Test." The "Train" button provides interactive lessons and activities tailored to specific needs, covering language development, social skills, and more. The "Test" button offers assessments and quizzes to track progress and celebrate achievements. Autism app aims to support individuals with autism on their personal development journey, empowering them to reach their full potential in a safe and supportive environment.
 
 ## Getting Started
 
