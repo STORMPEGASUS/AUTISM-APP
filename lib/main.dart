@@ -1,3 +1,4 @@
+import 'package:autism_app/mainScreen.dart';
 import 'package:autism_app/screens/learn/learn.dart';
 import 'package:autism_app/screens/learn/static_Object.dart';
 
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       routes: {
         staticObject.routename: (context) => staticObject(),
-        staticImage.routename: (context) => const staticImage(),
+        staticImage.routename: (context) => staticImage(),
       },
     );
   }
@@ -43,44 +44,44 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String title = "Learn";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Simply Grow'),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("IMAGES/bg3.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Stack(
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => learnScreen(cameras)));
-                });
-              },
-              child: const Text(
-                'Learn',
+            const Positioned(
+              bottom: 120,
+              left: 15,
+              right: 30,
+              child: Text(
+                'Introducing "Learn & Test Autism Aid," an inclusive app empowering individuals with autism to learn, test, and succeed through personalized content, adaptive testing, and accessibility features.',
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.start,
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => testScreen(_cameras)));
-                });
-              },
-              child: const Text(
-                'Test',
-              ),
+            Positioned(
+              left: 15,
+              right: 30,
+              bottom: 60,
+              child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  MainScreen('Autism', _cameras)));
+                    });
+                  },
+                  child: Text('Explore')),
             ),
           ],
         ),

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class learnScreen extends StatefulWidget {
   late List<CameraDescription> cameras;
-
-  learnScreen(this.cameras);
+  String title;
+  learnScreen(this.cameras, this.title);
 
   @override
   State<learnScreen> createState() => _learnScreenState();
@@ -16,39 +16,53 @@ class _learnScreenState extends State<learnScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Learn'),
+        title: Text(
+          widget.title,
+          style: TextStyle(color: Color.fromARGB(249, 85, 81, 53)),
+        ),
         centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Color.fromARGB(255, 207, 242, 168),
       ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  Navigator.pushNamed(context, '/static_object');
-                });
-              },
-              child: const Text(
-                'Static Learn',
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("IMAGES/bg4.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                
+                onPressed: () {
+                  setState(() {
+                    Navigator.pushNamed(context, '/static_object');
+                  });
+                },
+                child: Text(
+                  'Static ${widget.title}',
+                ),
+                style: ButtonStyle(),
               ),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => dynamicObject(widget.cameras)));
-                });
-              },
-              child: const Text(
-                'Dynamic Learn',
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                dynamicObject(widget.cameras)));
+                  });
+                },
+                child: Text(
+                  'Dynamic ${widget.title}',
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
