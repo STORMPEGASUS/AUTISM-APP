@@ -1,9 +1,9 @@
 import 'package:autism_app/mainScreen.dart';
-import 'package:autism_app/screens/learn/learn.dart';
+
 import 'package:autism_app/screens/learn/static_Object.dart';
 
 import 'package:autism_app/screens/test/static_Image.dart';
-import 'package:autism_app/screens/test/test.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:camera/camera.dart';
