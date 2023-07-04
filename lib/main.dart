@@ -71,17 +71,23 @@ class _MyHomePageState extends State<MyHomePage> {
               left: 15,
               right: 30,
               bottom: 60,
-              child: ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  MainScreen('Autism', _cameras)));
-                    });
-                  },
-                  child: Text('Explore')),
+              child: Container(
+                height: 50,
+                child: ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    MainScreen('Autism', _cameras)));
+                      });
+                    },
+                    child: Text(
+                      'Explore',
+                      style: TextStyle(fontSize: 20),
+                    )),
+              ),
             ),
           ],
         ),

@@ -38,42 +38,60 @@ class _testScreenState extends State<testScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.pushNamed(context, '/static_Image');
-                  });
-                },
-                child: const Text(
-                  'Static Test',
+              Container(
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.pushNamed(context, '/static_Image');
+                    });
+                  },
+                  child: const Text(
+                    'Static Test',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                dynamicImage(widget._cameras)));
-                  });
-                },
-                child: const Text(
-                  'Dynamic Test',
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  dynamicImage(widget._cameras)));
+                    });
+                  },
+                  child: const Text(
+                    'Dynamic Test',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                learnScreen(widget._cameras, 'Check Result')));
-                  });
-                },
-                child: const Text(
-                  'Check Result',
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => learnScreen(
+                                  widget._cameras, 'Check Result')));
+                    });
+                  },
+                  child: const Text(
+                    'Check Result',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
             ],

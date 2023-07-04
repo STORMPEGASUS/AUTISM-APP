@@ -35,30 +35,40 @@ class _learnScreenState extends State<learnScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              ElevatedButton(
-                
-                onPressed: () {
-                  setState(() {
-                    Navigator.pushNamed(context, '/static_object');
-                  });
-                },
-                child: Text(
-                  'Static ${widget.title}',
+              Container(
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.pushNamed(context, '/static_object');
+                    });
+                  },
+                  child: Text(
+                    'Static ${widget.title}',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  style: ButtonStyle(),
                 ),
-                style: ButtonStyle(),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                dynamicObject(widget.cameras)));
-                  });
-                },
-                child: Text(
-                  'Dynamic ${widget.title}',
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  dynamicObject(widget.cameras)));
+                    });
+                  },
+                  child: Text(
+                    'Dynamic ${widget.title}',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
             ],

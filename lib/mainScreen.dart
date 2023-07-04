@@ -55,6 +55,7 @@ class _MainScreenState extends State<MainScreen> {
                   },
                   child: Text(
                     'Learn',
+                    style: TextStyle(fontSize: 20),
                   ),
                   style: ElevatedButton.styleFrom(
                     elevation: 7,
@@ -82,6 +83,7 @@ class _MainScreenState extends State<MainScreen> {
                   },
                   child: const Text(
                     'Test',
+                    style: TextStyle(fontSize: 20),
                   ),
                   style: ElevatedButton.styleFrom(
                     elevation: 7,
