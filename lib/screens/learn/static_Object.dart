@@ -199,7 +199,7 @@ class ObjectPainter extends CustomPainter {
         TextSpan span = TextSpan(
             text: label.text,
             style: const TextStyle(
-                fontSize: 50,
+                fontSize: 80,
                 color: Color.fromARGB(255, 255, 255, 255),
                 fontWeight: FontWeight.w600));
         TextPainter tp = TextPainter(
