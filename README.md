@@ -11,6 +11,5 @@ A few resources to get you started if this is your first Flutter project:
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+here is a power point presentation of the APP
+[advances-in-autism-unveiling-the-potential-of-flutter-and-tensor-flow-ml-model-for-object-detection.pptx](https://github.com/STORMPEGASUS/AUTISM-APP/files/12186234/advances-in-autism-unveiling-the-potential-of-flutter-and-tensor-flow-ml-model-for-object-detection.pptx)
